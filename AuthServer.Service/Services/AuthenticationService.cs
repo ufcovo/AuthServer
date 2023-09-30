@@ -90,7 +90,7 @@ namespace AuthServer.Service.Services
         #endregion
 
         #region RevokeRefreshToken
-        public async Task<Response<NoDataDto>> RevokeRefreshToken(string refreshToken)
+        public async Task<Response<NoDataDto>> RevokeRefreshTokenAsync(string refreshToken)
         {
             var existRefreshToken = await _userRefreshTokenService.Where(r => r.Code == refreshToken).SingleOrDefaultAsync();
             if(existRefreshToken is null) return Response<NoDataDto>.Fail("RefreshToken not found", StatusCodes.Status404NotFound, true);
