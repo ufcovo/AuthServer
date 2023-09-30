@@ -46,7 +46,7 @@ namespace AuthServer.Service.Services
             return Response<TDto>.Success(ObjectMapper.Mapper.Map<TDto>(product), StatusCodes.Status200OK);
         }
 
-        public async Task<Response<NoDataDto>> Remove(int id)
+        public async Task<Response<NoDataDto>> RemoveAsync(int id)
         {
             var isExistEntity = await _genericRepository.GetByIdAsync(id);
             if (isExistEntity == null) return Response<NoDataDto>.Fail("Id not found.", StatusCodes.Status404NotFound, true);
@@ -55,7 +55,7 @@ namespace AuthServer.Service.Services
             return Response<NoDataDto>.Success(StatusCodes.Status204NoContent);
         }
 
-        public async Task<Response<NoDataDto>> Update(TDto dto, int id)
+        public async Task<Response<NoDataDto>> UpdateAsync(TDto dto, int id)
         {
             var isExistEntity = await _genericRepository.GetByIdAsync(id);
             if (isExistEntity == null) return Response<NoDataDto>.Fail("Id not found.", StatusCodes.Status404NotFound, true);
