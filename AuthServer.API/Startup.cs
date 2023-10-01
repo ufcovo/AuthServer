@@ -20,6 +20,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using SharedLibrary.Configurations;
+using SharedLibrary.Extensions;
 using SharedLibrary.Services;
 using System;
 using System.Collections.Generic;
@@ -86,11 +87,11 @@ namespace AuthServer.API
                 };
             });
 
-
             services.AddControllers().AddFluentValidation(opt =>
             {
                 opt.RegisterValidatorsFromAssemblyContaining<Startup>();
             });
+            services.UseCustomValidationResponse();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "AuthServer.API", Version = "v1" });
