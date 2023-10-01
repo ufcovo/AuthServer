@@ -42,8 +42,9 @@ namespace AuthServer.Service.Services
         #endregion
 
         #region GetClaims
-        private IEnumerable<Claim> GetClaims(UserApp userApp, List<String> audiences)
+        private async Task<IEnumerable<Claim>> GetClaims(UserApp userApp, List<String> audiences)
         {
+            var userRoles = await _userManager.GetRolesAsync(userApp);
             var userList = new List<Claim>
             {
                 new Claim(ClaimTypes.NameIdentifier, userApp.Id),
@@ -52,6 +53,7 @@ namespace AuthServer.Service.Services
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
             };
             userList.AddRange(audiences.Select(r => new Claim(JwtRegisteredClaimNames.Aud, r)));
+            userList.AddRange(userRoles.Select(r => new Claim(ClaimTypes.Role, r)));
             return userList;
         }
         #endregion
@@ -78,7 +80,7 @@ namespace AuthServer.Service.Services
                     issuer: _customTokenOption.Issuer,
                     expires: accessTokenExpiration,
                     notBefore: DateTime.Now,
-                    claims: GetClaims(userApp, _customTokenOption.Audience),
+                    claims: GetClaims(userApp, _customTokenOption.Audience).Result,
                     signingCredentials: signingCredentials
                 );
             var handler = new JwtSecurityTokenHandler();
