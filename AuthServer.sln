@@ -3,21 +3,23 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthServer.API", "AuthServer.API\AuthServer.API.csproj", "{D4A2259A-06BB-4AF4-9381-7BEE4C847792}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthServer.API", "AuthServer.API\AuthServer.API.csproj", "{D4A2259A-06BB-4AF4-9381-7BEE4C847792}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthServer.Core", "AuthServer.Core\AuthServer.Core.csproj", "{686AF4A1-9346-4EBC-9E35-F0EB1BE06201}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthServer.Core", "AuthServer.Core\AuthServer.Core.csproj", "{686AF4A1-9346-4EBC-9E35-F0EB1BE06201}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthServer.Data", "AuthServer.Data\AuthServer.Data.csproj", "{5158F65F-B9EE-4EA1-8ABF-9FEA6CF0FD17}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthServer.Data", "AuthServer.Data\AuthServer.Data.csproj", "{5158F65F-B9EE-4EA1-8ABF-9FEA6CF0FD17}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthServer.Service", "AuthServer.Service\AuthServer.Service.csproj", "{E8FB2513-15B7-423C-92AA-82D3D5ADC6DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthServer.Service", "AuthServer.Service\AuthServer.Service.csproj", "{E8FB2513-15B7-423C-92AA-82D3D5ADC6DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniApp1.API", "MiniApp1.API\MiniApp1.API.csproj", "{89548CED-5B06-4FF5-856E-4DBD40FE47E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MiniApp1.API", "MiniApp1.API\MiniApp1.API.csproj", "{89548CED-5B06-4FF5-856E-4DBD40FE47E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniApp2.API", "MiniApp2.API\MiniApp2.API.csproj", "{C461F817-7B02-46CE-8148-5E1C6D496483}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MiniApp2.API", "MiniApp2.API\MiniApp2.API.csproj", "{C461F817-7B02-46CE-8148-5E1C6D496483}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiniApp3.API", "MiniApp3.API\MiniApp3.API.csproj", "{A74F7560-73D4-467F-8A79-CC6A8520BFEE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MiniApp3.API", "MiniApp3.API\MiniApp3.API.csproj", "{A74F7560-73D4-467F-8A79-CC6A8520BFEE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedLibrary", "SharedLibrary\SharedLibrary.csproj", "{F7AD047E-1816-4FBA-9A75-F673F2594D8F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharedLibrary", "SharedLibrary\SharedLibrary.csproj", "{F7AD047E-1816-4FBA-9A75-F673F2594D8F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplicationCheck", "WebApplicationCheck\WebApplicationCheck.csproj", "{DAA8DA16-959E-43BF-823F-547353A804E8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{F7AD047E-1816-4FBA-9A75-F673F2594D8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7AD047E-1816-4FBA-9A75-F673F2594D8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7AD047E-1816-4FBA-9A75-F673F2594D8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAA8DA16-959E-43BF-823F-547353A804E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAA8DA16-959E-43BF-823F-547353A804E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAA8DA16-959E-43BF-823F-547353A804E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAA8DA16-959E-43BF-823F-547353A804E8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
