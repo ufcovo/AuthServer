@@ -107,7 +107,12 @@ namespace AuthServer.API
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "AuthServer.API v1"));
             }
-
+            // Production da kullanilmasi best practise
+            //else
+            //{
+            //    app.UseCustomException();
+            //}
+            app.UseCustomException();
             app.UseHttpsRedirection();
 
             app.UseRouting();
