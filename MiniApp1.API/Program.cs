@@ -1,7 +1,9 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MiniApp1.API.Requirements;
 using SharedLibrary.Configurations;
 using SharedLibrary.Extensions;
 
@@ -18,11 +20,17 @@ builder.Services.Configure<CustomTokenOption>(builder.Configuration.GetSection("
 var tokenOptions = builder.Configuration.GetSection("TokenOption").Get<CustomTokenOption>();
 builder.Services.AddCustomTokenAuth(tokenOptions);
 
+builder.Services.AddSingleton<IAuthorizationHandler, BirthDateRequirementHandler>();
 builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy("AnkaraPolicy", policy =>
     {
         policy.RequireClaim("City", "Ankara");
+    });
+
+    options.AddPolicy("AgePolicy", policy =>
+    {
+        policy.Requirements.Add(new BirthDateRequirement(18));
     });
 });
 
